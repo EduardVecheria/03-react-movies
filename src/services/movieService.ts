@@ -6,8 +6,6 @@ axios.defaults.headers['Authorization'] = `Bearer ${
   import.meta.env.VITE_TMDB_TOKEN
 }`;
 
-console.log(import.meta.env.VITE_TMDB_TOKEN);
-
 interface FetchMovies {
   page: number;
   results: Movie[];
