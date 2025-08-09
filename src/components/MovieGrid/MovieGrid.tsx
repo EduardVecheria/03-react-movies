@@ -10,7 +10,6 @@ export default function MovieGrid({ onSelect, movies }: MovieGridProps) {
 	const selectMovie = (index: number) => {
 		onSelect(movies[index])
 	}
-
 	return (
 		<ul className={css.grid}>
 			{movies.map(({ id, title, poster_path }, i) => {

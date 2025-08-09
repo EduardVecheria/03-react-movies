@@ -13,15 +13,13 @@ interface FetchMovies {
 	total_results: number
 }
 
-export const fetchMovies = async (
-	query: string,
-	page: number
-): Promise<FetchMovies> => {
-	const { data } = await axios<FetchMovies>("search/movie", {
+export const fetchMovies = async (query: string): Promise<Movie[]> => {
+	const {
+		data: { results },
+	} = await axios<FetchMovies>("search/movie", {
 		params: {
 			query,
-			page,
 		},
 	})
-	return data
+	return results
 }
